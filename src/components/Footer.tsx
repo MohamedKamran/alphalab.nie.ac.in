@@ -1,4 +1,3 @@
-import React from 'react';
 import { CircuitBoard, Heart, ExternalLink, ArrowUp } from 'lucide-react';
 
 export const Footer = () => {
@@ -16,8 +15,13 @@ export const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <CircuitBoard className="h-8 w-8 text-blue-300" />
-              <span className="text-xl font-bold">ALPHA LAB</span>
+              <a href="#" className="flex items-center space-x-2">
+            <img 
+              src="/image.png" 
+              alt="ALPHA Lab" 
+              className="h-12 w-auto rounded-[5px_5px_50px_50px]" 
+            />
+            </a>
             </div>
             <p className="text-blue-200 mb-4">
               Advanced Laboratory for Programming and Hardware Analysis, fostering innovation and technological excellence.
@@ -54,10 +58,10 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Events', 'Contact'].map((item) => (
+              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Student Governance', 'Events', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
                     className="text-blue-200 hover:text-white transition-colors"
                   >
                     {item}

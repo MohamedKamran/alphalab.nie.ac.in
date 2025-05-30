@@ -87,7 +87,31 @@ export const StudentGovernance = () => {
     }
   ];
 
-  const totalSlides = Math.ceil(students.length / 5);
+  // Responsive items per slide
+  const getItemsPerSlide = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 1; // Mobile: 1 item
+      if (window.innerWidth < 1024) return 2; // Tablet: 2 items
+      if (window.innerWidth < 1280) return 3; // Desktop small: 3 items
+      return 4; // Desktop large: 4 items
+    }
+    return 4;
+  };
+
+  const [itemsPerSlide, setItemsPerSlide] = useState(getItemsPerSlide());
+  
+  // Update items per slide on window resize
+  React.useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(getItemsPerSlide());
+      setCurrentSlide(0); // Reset to first slide on resize
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalSlides = Math.ceil(students.length / itemsPerSlide);
   
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -98,88 +122,126 @@ export const StudentGovernance = () => {
   };
 
   return (
-    <section id="student-governance" className="py-20 bg-gray-50">
+    <section id="student-governance" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Student Governance</h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
-          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center mb-4">
+            <Users className="h-8 w-8 text-blue-600 mr-3" />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Student Governance</h2>
+          </div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet our dedicated student leaders who help manage and coordinate various activities at ALPHA Lab.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
+        <div className="relative max-w-7xl mx-auto">
+          {/* Carousel Container */}
+          <div className="overflow-hidden rounded-2xl">
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                <div key={slideIndex} className="w-full flex-shrink-0 flex gap-6">
-                  {students.slice(slideIndex * 5, (slideIndex + 1) * 5).map((student, index) => (
-                    <div 
-                      key={index}
-                      className="flex-1 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-[400px]"
-                    >
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={student.image} 
-                          alt={student.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-semibold text-gray-800">{student.name}</h3>
-                        <p className="text-blue-600 text-sm mb-1">{student.role}</p>
-                        <p className="text-gray-600 text-xs mb-2">{student.year} • {student.department}</p>
-                        <div className="flex space-x-2">
-                          <a href={student.social.linkedin} className="text-gray-400 hover:text-blue-600">
-                            <Linkedin className="h-4 w-4" />
-                          </a>
-                          <a href={student.social.twitter} className="text-gray-400 hover:text-blue-500">
-                            <Twitter className="h-4 w-4" />
-                          </a>
-                          <a href={`mailto:${student.social.email}`} className="text-gray-400 hover:text-red-500">
-                            <Mail className="h-4 w-4" />
-                          </a>
+                <div 
+                  key={slideIndex} 
+                  className="w-full flex-shrink-0 px-2"
+                >
+                  <div className={`grid gap-6 ${
+                    itemsPerSlide === 1 ? 'grid-cols-1' :
+                    itemsPerSlide === 2 ? 'grid-cols-2' :
+                    itemsPerSlide === 3 ? 'grid-cols-3' : 'grid-cols-4'
+                  }`}>
+                    {students
+                      .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                      .map((student, index) => (
+                      <div 
+                        key={index}
+                        className="bg-white rounded-xl overflow-hidden"
+                      >
+                        <div className="relative h-48 overflow-hidden">
+                          <img 
+                            src={student.image} 
+                            alt={student.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-bold text-lg text-gray-800 mb-1">{student.name}</h3>
+                          <p className="text-blue-600 font-semibold text-sm mb-2">{student.role}</p>
+                          <p className="text-gray-500 text-sm mb-4 flex items-center">
+                            <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                            {student.year} • {student.department}
+                          </p>
+                          <div className="flex space-x-3 pt-2 border-t border-gray-100">
+                            <a 
+                              href={student.social.linkedin} 
+                              className="text-gray-400 p-1 rounded-full"
+                              aria-label={`${student.name}'s LinkedIn`}
+                            >
+                              <Linkedin className="h-5 w-5" />
+                            </a>
+                            <a 
+                              href={student.social.twitter} 
+                              className="text-gray-400 p-1 rounded-full"
+                              aria-label={`${student.name}'s Twitter`}
+                            >
+                              <Twitter className="h-5 w-5" />
+                            </a>
+                            <a 
+                              href={`mailto:${student.social.email}`} 
+                              className="text-gray-400 p-1 rounded-full"
+                              aria-label={`Email ${student.name}`}
+                            >
+                              <Mail className="h-5 w-5" />
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Navigation Arrows */}
-          <button 
-            onClick={prevSlide}
-            className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-50 transition-colors"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-6 w-6 text-gray-600" />
-          </button>
+          {totalSlides > 1 && (
+            <>
+              <button 
+                onClick={prevSlide}
+                className="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-white p-3 rounded-full z-10"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="h-6 w-6 text-gray-600" />
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white p-3 rounded-full z-10"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="h-6 w-6 text-gray-600" />
+              </button>
+            </>
+          )}
 
           {/* Navigation Dots */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          {totalSlides > 1 && (
+            <div className="flex justify-center mt-12 space-x-3">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-blue-600' 
+                      : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
