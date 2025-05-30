@@ -3,7 +3,7 @@ name: Deploy Vite React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master' or any branch you use
+      - main
 
 permissions:
   contents: read
@@ -15,30 +15,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Vite app
+      - name: Build app
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload build output
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
+          path: ./dist
 
   deploy:
-    needs: build-and-deploy
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
