@@ -1,4 +1,3 @@
-import React from 'react';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 
 export const Team = () => {
@@ -6,7 +5,7 @@ export const Team = () => {
     {
       name: 'Mr. X',
       role: 'Lab Director',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Mr.+X',
       bio: 'With over 15 years of experience in hardware design and embedded systems, Mr. X leads the strategic direction of ALPHA Lab.',
       social: {
         linkedin: '#',
@@ -17,7 +16,7 @@ export const Team = () => {
     {
       name: 'Mrs. Y',
       role: 'Technical Lead',
-      image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Mrs.+Y',
       bio: 'A specialist in IoT and robotics, Mrs. Y oversees technical projects and mentors students in advanced programming.',
       social: {
         linkedin: '#',
@@ -28,23 +27,12 @@ export const Team = () => {
     {
       name: 'Mr. Z',
       role: 'Industry Liaison',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/10B981/FFFFFF?text=Mr.+Z',
       bio: 'Mr. Z bridges the gap between academia and industry, facilitating partnerships and ensuring lab initiatives align with industry needs.',
       social: {
         linkedin: '#',
         twitter: '#',
         email: 'liaison@example.com'
-      }
-    },
-    {
-      name: 'Mrs. W',
-      role: 'Research Coordinator',
-      image: 'https://images.pexels.com/photos/2379xxx/pexels-photo-2379xxx.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Specializing in emerging technologies, Mrs. W coordinates research activities and guides student innovations toward publication.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'research@example.com'
       }
     }
   ];

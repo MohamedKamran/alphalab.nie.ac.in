@@ -8,7 +8,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student A',
       role: 'President',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=Student+A',
       year: '4th Year',
       department: 'Computer Science',
       social: { linkedin: '#', twitter: '#', email: 'student.a@example.com' }
@@ -16,7 +16,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student B',
       role: 'Vice President',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=Student+B',
       year: '3rd Year',
       department: 'Electronics',
       social: { linkedin: '#', twitter: '#', email: 'student.b@example.com' }
@@ -24,7 +24,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student C',
       role: 'Secretary',
-      image: 'https://images.pexels.com/photos/2379006/pexels-photo-2379006.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/10B981/FFFFFF?text=Student+C',
       year: '4th Year',
       department: 'Mechanical',
       social: { linkedin: '#', twitter: '#', email: 'student.c@example.com' }
@@ -32,7 +32,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student D',
       role: 'Treasurer',
-      image: 'https://images.pexels.com/photos/2379007/pexels-photo-2379007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=Student+D',
       year: '3rd Year',
       department: 'Computer Science',
       social: { linkedin: '#', twitter: '#', email: 'student.d@example.com' }
@@ -40,7 +40,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student E',
       role: 'Technical Lead',
-      image: 'https://images.pexels.com/photos/2379008/pexels-photo-2379008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/EF4444/FFFFFF?text=Student+E',
       year: '4th Year',
       department: 'Electronics',
       social: { linkedin: '#', twitter: '#', email: 'student.e@example.com' }
@@ -48,7 +48,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student F',
       role: 'Project Coordinator',
-      image: 'https://images.pexels.com/photos/2379009/pexels-photo-2379009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/6366F1/FFFFFF?text=Student+F',
       year: '3rd Year',
       department: 'Computer Science',
       social: { linkedin: '#', twitter: '#', email: 'student.f@example.com' }
@@ -56,7 +56,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student G',
       role: 'Events Coordinator',
-      image: 'https://images.pexels.com/photos/2379010/pexels-photo-2379010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/EC4899/FFFFFF?text=Student+G',
       year: '2nd Year',
       department: 'Mechanical',
       social: { linkedin: '#', twitter: '#', email: 'student.g@example.com' }
@@ -64,7 +64,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student H',
       role: 'Documentation Lead',
-      image: 'https://images.pexels.com/photos/2379011/pexels-photo-2379011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/14B8A6/FFFFFF?text=Student+H',
       year: '3rd Year',
       department: 'Electronics',
       social: { linkedin: '#', twitter: '#', email: 'student.h@example.com' }
@@ -72,7 +72,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student I',
       role: 'Outreach Coordinator',
-      image: 'https://images.pexels.com/photos/2379012/pexels-photo-2379012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/F97316/FFFFFF?text=Student+I',
       year: '2nd Year',
       department: 'Computer Science',
       social: { linkedin: '#', twitter: '#', email: 'student.i@example.com' }
@@ -80,7 +80,7 @@ export const StudentGovernance = () => {
     {
       name: 'Student J',
       role: 'Research Assistant',
-      image: 'https://images.pexels.com/photos/2379013/pexels-photo-2379013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://via.placeholder.com/400x300/84CC16/FFFFFF?text=Student+J',
       year: '4th Year',
       department: 'Electronics',
       social: { linkedin: '#', twitter: '#', email: 'student.j@example.com' }
