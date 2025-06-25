@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const Events = () => {
@@ -82,7 +82,7 @@ export const Events = () => {
         
         {/* Events Carousel */}
         <div className="mb-8">
-          <div className="relative max-w-6xl mx-auto px-16">
+          <div className="relative w-full px-4 md:px-8">
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="md:flex">
                 <div className="md:w-1/2 bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 md:p-12 flex flex-col justify-center">

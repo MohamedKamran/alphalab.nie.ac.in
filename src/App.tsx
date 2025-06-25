@@ -10,6 +10,7 @@ import { StudentGovernance } from './components/StudentGovernance';
 import { Events } from './components/Events';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Announcements } from './components/Announcements';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Announcements />
         <About />
         <Partners />
         <Facilities />
