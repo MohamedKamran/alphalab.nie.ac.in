@@ -1,4 +1,4 @@
-import React from 'react';
+// React import removed (not directly used in this file)
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -6,7 +6,6 @@ import { Partners } from './components/Partners';
 import { Facilities } from './components/Facilities';
 import { Projects } from './components/Projects';
 import { Team } from './components/Team';
-import { StudentGovernance } from './components/StudentGovernance';
 import { Events } from './components/Events';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -23,9 +22,8 @@ function App() {
         <Partners />
         <Facilities />
         <Projects />
-        <Team />
-        <StudentGovernance />
-        <Events />
+  <Team />
+  <Events />
         <Contact />
       </main>
       <Footer />

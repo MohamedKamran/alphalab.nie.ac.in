@@ -35,7 +35,7 @@ export const Header = () => {
             </a>
           
           <nav className="hidden md:flex space-x-8">
-            {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Student Governance', 'Events', 'Contact'].map((item) => (
+            {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Events', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -63,7 +63,7 @@ export const Header = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-3">
             <nav className="flex flex-col space-y-3">
-              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Student Governance', 'Events', 'Contact'].map((item) => (
+                {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Events', 'Contact'].map((item) => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase().replace(' ', '-')}`} 

@@ -1,4 +1,4 @@
-import { CircuitBoard, Heart, ExternalLink, ArrowUp } from 'lucide-react';
+import { Heart, ExternalLink, ArrowUp } from 'lucide-react';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -58,7 +58,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Student Governance', 'Events', 'Contact'].map((item) => (
+              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Events', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase().replace(' ', '-')}`} 
