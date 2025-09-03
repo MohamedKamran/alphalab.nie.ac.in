@@ -1,4 +1,4 @@
-import { Heart, ExternalLink, ArrowUp } from 'lucide-react';
+import { Heart, ExternalLink, ArrowUp, Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -9,142 +9,172 @@ export const Footer = () => {
   };
   
   return (
-    <footer className="bg-blue-900 text-white">
-      <div className="container mx-auto px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* About */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <a href="#" className="flex items-center space-x-2">
-            <img 
-              src="/image.png" 
-              alt="ALPHA Lab" 
-              className="h-12 w-auto rounded-[5px_5px_50px_50px]" 
-            />
-            </a>
-            </div>
-            <p className="text-blue-200 mb-4">
-              Advanced Laboratory for Programming and Hardware Analysis, fostering innovation and technological excellence.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-blue-300 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-              </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                </svg>
-              </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-              <a href="#" className="text-blue-300 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {['About', 'Partners', 'Facilities', 'Projects', 'Team', 'Events', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a 
-                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                    className="text-blue-200 hover:text-white transition-colors"
+    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+      </div>
+      
+      <div className="container-custom relative z-10">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {/* About Section */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="relative">
+                  <img 
+                    src="/image.png" 
+                    alt="ALPHA Lab" 
+                    className="h-12 w-auto rounded-2xl" 
+                  />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-indigo-500/20"></div>
+                </div>
+                <div className="font-bold text-xl">ALPHA Lab</div>
+              </div>
+              <p className="text-blue-200 mb-6 leading-relaxed">
+                Pioneering innovation through collaborative research and development. 
+                Empowering the next generation of makers and innovators.
+              </p>
+              
+              {/* Contact Info */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-blue-200">
+                  <MapPin className="w-4 h-4 mr-3 text-blue-400" />
+                  <span className="text-sm">NIE Mysore, Karnataka, India</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Phone className="w-4 h-4 mr-3 text-blue-400" />
+                  <span className="text-sm">+91 (821) 248-0472</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Mail className="w-4 h-4 mr-3 text-blue-400" />
+                  <span className="text-sm">alpha@nie.ac.in</span>
+                </div>
+              </div>
+              
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {[
+                  { icon: Facebook, href: "#", label: "Facebook" },
+                  { icon: Twitter, href: "#", label: "Twitter" },
+                  { icon: Linkedin, href: "#", label: "LinkedIn" },
+                  { icon: Instagram, href: "#", label: "Instagram" }
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label={social.label}
                   >
-                    {item}
+                    <social.icon className="w-5 h-5 text-blue-300" />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Resources */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-blue-200 hover:text-white transition-colors flex items-center">
-                  <span>Student Portal</span>
-                  <ExternalLink className="h-3 w-3 ml-1" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-blue-200 hover:text-white transition-colors flex items-center">
-                  <span>Equipment Booking</span>
-                  <ExternalLink className="h-3 w-3 ml-1" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-blue-200 hover:text-white transition-colors flex items-center">
-                  <span>Project Gallery</span>
-                  <ExternalLink className="h-3 w-3 ml-1" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-blue-200 hover:text-white transition-colors flex items-center">
-                  <span>Workshop Materials</span>
-                  <ExternalLink className="h-3 w-3 ml-1" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-blue-200 hover:text-white transition-colors flex items-center">
-                  <span>Research Papers</span>
-                  <ExternalLink className="h-3 w-3 ml-1" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Subscribe to Our Newsletter</h4>
-            <p className="text-blue-200 mb-4">
-              Stay updated with the latest news, events, and innovations from ALPHA Lab.
-            </p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800"
-              />
-              <button 
-                type="submit" 
-                className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+                ))}
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: 'About', href: '#about' },
+                  { name: 'Partners', href: '#partners' },
+                  { name: 'Facilities', href: '#facilities' },
+                  { name: 'Projects', href: '#projects' },
+                  { name: 'Team', href: '#team' },
+                  { name: 'Events', href: '#events' },
+                  { name: 'Contact', href: '#contact' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.href} 
+                      className="text-blue-200 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Resources */}
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-white">Resources</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: 'Student Portal', href: '#' },
+                  { name: 'Equipment Booking', href: '#' },
+                  { name: 'Project Gallery', href: '#' },
+                  { name: 'Workshop Materials', href: '#' },
+                  { name: 'Research Papers', href: '#' },
+                  { name: 'Documentation', href: '#' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <a 
+                      href={item.href} 
+                      className="text-blue-200 hover:text-white transition-colors duration-300 flex items-center group"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{item.name}</span>
+                      <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Newsletter */}
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-white">Stay Connected</h4>
+              <p className="text-blue-200 mb-6 leading-relaxed">
+                Subscribe to get the latest updates on innovations, events, and opportunities at ALPHA Lab.
+              </p>
+              <form className="space-y-4">
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  Subscribe Now
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-blue-200 text-center md:text-left mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} ALPHA Lab. All rights reserved.
-          </p>
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-            <p className="text-blue-200 flex items-center">
-              Made with <Heart className="h-4 w-4 text-red-400 mx-1" /> in Mysore, India
-            </p>
-            <button 
-              onClick={scrollToTop}
-              className="bg-blue-700 hover:bg-blue-600 p-2 rounded-full transition-colors"
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="h-5 w-5" />
-            </button>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+              <p className="text-blue-200 text-center">
+                &copy; {new Date().getFullYear()} ALPHA Lab, NIE Mysore. All rights reserved.
+              </p>
+              <div className="flex items-center space-x-4 text-blue-300 text-sm">
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <span>•</span>
+                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-6">
+              <p className="text-blue-200 flex items-center text-sm">
+                Made with <Heart className="h-4 w-4 text-red-400 mx-1" /> in Mysore, India
+              </p>
+              <button 
+                onClick={scrollToTop}
+                className="group bg-white/10 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110"
+                aria-label="Scroll to top"
+              >
+                <ArrowUp className="h-5 w-5 text-blue-300 group-hover:text-white transition-colors" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

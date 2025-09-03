@@ -1,4 +1,3 @@
-// React import removed (not directly used in this file)
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -13,17 +12,17 @@ import { Announcements } from './components/Announcements';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 selection:bg-blue-200 selection:text-blue-900">
       <Header />
-      <main>
+      <main className="relative">
         <Hero />
         <Announcements />
         <About />
         <Partners />
         <Facilities />
         <Projects />
-  <Team />
-  <Events />
+        <Team />
+        <Events />
         <Contact />
       </main>
       <Footer />
